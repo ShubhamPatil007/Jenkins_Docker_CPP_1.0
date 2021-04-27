@@ -1,10 +1,13 @@
-FROM gcc:latest
+FROM ubuntu:latest
+
+RUN apt-get -y update && apt-get install -y
+
+RUN apt-get -y install cmake;
 
 COPY . usr/src/jenkins_docker_cpp_1.0
 
 WORKDIR usr/src/jenkins_docker_cpp_1.0
 
-# RUN cmake . -G "MinGW Makefiles"; make; main
-RUN g++ -o main main.cpp
+RUN cmake . -G "Unix Makefiles"; make;
 
 CMD ["main"]                                      # run command inside container
