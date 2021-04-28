@@ -11,5 +11,3 @@ WORKDIR usr/src/jenkins_docker_cpp_1.0
 RUN cmake . -G "Unix Makefiles"; make;
 
 CMD ["./main"]                                      # run shell command inside container
-
-RUN docker run --rm -it ./docker_cpp_1.0:latest
