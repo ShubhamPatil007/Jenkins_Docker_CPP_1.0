@@ -10,4 +10,4 @@ WORKDIR usr/src/jenkins_docker_cpp_1.0
 
 RUN cmake . -G "Unix Makefiles"; make;
 
-CMD ["usr/src/jenkins_docker_cpp_1.0/main"]                                      # run command inside container
+CMD ["./main"]                                      # run shell command inside container
